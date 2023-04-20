@@ -1,0 +1,23 @@
+alias ..='cd ..'
+alias gs='git status'
+alias ga='git add .'
+alias gcm='git commit -m'
+alias gsm='git switch main && git pull'
+alias gsh='git push'
+alias gll='git pull'
+alias gpom='git pull origin main'
+alias gundo='git reset HEAD~'
+alias gstash='git stash'
+alias gpop='git stash pop'
+
+alias ea='nano ~/.bash_aliases && . ~/.bash_aliases'
+alias ek='nano ~/.xbindkeysrc && xbindkeys'
+
+alias clr='clear'
+
+alias dcu='docker compose up'
+alias dcua='docker compose up spe-api'
+alias dnp='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
+
+alias spe='cd ~/dewire'
+alias dewire='cd ~/dewire'
