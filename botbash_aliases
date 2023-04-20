@@ -9,6 +9,9 @@ alias gpom='git pull origin main'
 alias gundo='git reset HEAD~'
 alias gstash='git stash'
 alias gpop='git stash pop'
+alias gwip='git add . && git commit -m "WIP" && git push'
+
+alias apec='yarn add @telia-company/payment-engine-common'
 
 alias ea='nano ~/.bash_aliases && . ~/.bash_aliases'
 alias ek='nano ~/.xbindkeysrc && xbindkeys'
