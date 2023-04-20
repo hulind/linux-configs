@@ -1,0 +1,250 @@
+{
+	// PaaSE js vs-code snippets v1
+	//
+	// Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Unit Test Template": {
+		"prefix": "unittest",
+		"body": [
+			"describe('$1', () => {",
+			"  const containerScope = createScope();",
+			"  const {",
+			"",
+			"  } = containerScope.cradle;",
+			"",
+			"  afterEach(async () => {",
+			"    sinon.restore();",
+			"  });",
+			"",
+			"  after(async () => {",
+			"    await containerScope.dispose();",
+			"  });",
+			"",
+			"  describe('$2', () => {",
+			"    beforeEach(async () => {",
+			"",
+			"    });",
+			"",
+			"    it('$3', async () => {",
+			"",
+			"    });",
+			"  });",
+			"});",
+			""
+		]
+	},
+	"Unit Test Describe": {
+		"prefix": "describe",
+		"body": [
+			"describe('$1', () => {",
+			"  beforeEach(async () => {",
+			"",
+			"  });",
+			"",
+			"  it('$2', async () => {",
+			"",
+			"  });",
+			"});",
+			""
+		]
+	},
+	"Unit Test": {
+		"prefix": "it",
+		"body": [
+			"it('$1', async () => {",
+			"",
+			"});",
+		]
+	},
+	"Unit Test Throws": {
+		"prefix": "it throws",
+		"body": [
+			"it('throws $1 when $2 throws', async () => {",
+			"  expect(() => $3($4)).to.throw($1);",
+			"});",
+		]
+	},
+	"Unit Test Rejects": {
+		"prefix": "it rejects",
+		"body": [
+			"it('rejects with $1 when $2', async () => {",
+			"  await expect($3($4)).to.be.rejectedWith($1);",
+			"});",
+		]
+	},
+	"Unit Test Rejects MockedError": {
+		"prefix": "it rejects mocked",
+		"body": [
+			"it('rejects when $1 throws', async () => {",
+			"  $1Stub.rejects(new MockedError());",
+			"",
+			"  await expect($2($3)).to.be.rejectedWith(MockedError);",
+			"  sinon.assert.calledWith($1Stub, $4);",
+			"});",
+		]
+	},
+	"Update Transaction": {
+		"prefix": "update transaction",
+		"body": [
+			"await transactionService.updateTransaction(transaction, '$1');"
+		]
+	},
+	"Log Info": {
+		"prefix": "info",
+		"body": [
+			"logger.info(`$1${$2}`);"
+		]
+	},
+	"Log Warn": {
+		"prefix": "warn",
+		"body": [
+			"logger.warn(`$1${$2}`);"
+		]
+	},
+	"Log Debug": {
+		"prefix": "debug",
+		"body": [
+			"logger.debug(`$1${$2}`);"
+		]
+	},
+	"Log Error": {
+		"prefix": "error",
+		"body": [
+			"logger.error(`$1${$2}`);"
+		]
+	},
+	"Dependency Injection Template": {
+		"prefix": "deps",
+		"body": [
+			"module.exports = (deps) => {",
+			"  const {",
+			"    $1",
+			"  } = deps;",
+			"",
+			"  return {",
+			"",
+			"  };",
+			"};",
+			""
+		]
+	},
+	"Require Payment Engine Common": {
+		"prefix": "common",
+		"body": [
+			"const {",
+			"  $1",
+			"} = require('@telia-company/payment-engine-common');"
+		]
+	},
+	"Require Payment Engine Adyen Common": {
+		"prefix": "adyen common",
+		"body": [
+			"const {",
+			"  $1",
+			"} = require('@telia-company/payment-engine-adyen-common');"
+		]
+	},
+	"Require Faker": {
+		"prefix": "faker",
+		"body": [
+			"const { faker } = require('@faker-js/faker');"
+		]
+	},
+	"Require Statement": {
+		"prefix": "require",
+		"body": [
+			"const $1 = require('$2');"
+		]
+	},
+	"Require Destructure Statement": {
+		"prefix": "require destructure",
+		"body": [
+			"const {$1} = require('$2');"
+		]
+	},
+	"Faker UUID": {
+		"prefix": "faker uuid",
+		"body": [
+			"faker.datatype.uuid()"
+		]
+	},
+	"Import Separator": {
+		"prefix": "separator",
+		"body": [
+			"//---------------------------------------------------------------------------------"
+		]
+	},
+	"Stub Resolves": {
+		"prefix": "stub resolves",
+		"body": [
+			"$1Stub = sinon.stub($2, '$1').resolves($3);"
+		]
+	},
+	"Stub Returns": {
+		"prefix": "stub returns",
+		"body": [
+			"$1Stub = sinon.stub($2, '$1').returns($3);"
+		]
+	},
+	"Try-Catch with Logger": {
+		"prefix": "try catch",
+		"body": [
+			"try {",
+			"  $1",
+			"} catch(error) {",
+			"  logger.error(`$2 Error: ${error.message}`, error)",
+			"}"
+		]
+	},
+	"Schema Object": {
+		"prefix": "schema object",
+		"body": [
+			"$1: {",
+			"  type: 'object',",
+			"  properties: {",
+			"    $2",
+			"  }",
+			"  required: []",
+			"}"
+		]
+	},
+	"Schema Array": {
+		"prefix": "schema array",
+		"body": [
+			"$1: {",
+			"  type: 'array',",
+			"  items: {",
+			"    $2",
+			"  }",
+			"}"
+		]
+	},
+	"Schema String": {
+		"prefix": "schema string",
+		"body": [
+			"$1: {",
+			"  type: 'string'",
+			"}"
+		]
+	},
+	"Schema Enum": {
+		"prefix": "schema enum",
+		"body": [
+			"$1: {",
+			"  type: 'string',",
+			"  enum: ['$2']",
+			"}"
+		]
+	}
+}
