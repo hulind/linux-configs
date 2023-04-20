@@ -1,2 +1,2 @@
 # linux-configs
-Collection of linux configurations
+Collection of linux/vs:code configurations
