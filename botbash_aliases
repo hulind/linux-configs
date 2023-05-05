@@ -1,3 +1,5 @@
+alias npmt='export NPM_GITHUB_TOKEN='
+
 alias ..='cd ..'
 alias gs='git status'
 alias ga='git add .'
@@ -6,12 +8,16 @@ alias gsm='git switch main && git pull'
 alias gsh='git push'
 alias gll='git pull'
 alias gpom='git pull origin main'
-alias gundo='git reset HEAD~'
+alias greset='git reset HEAD~'
 alias gstash='git stash'
 alias gpop='git stash pop'
 alias gwip='git add . && git commit -m "WIP" && git push'
+alias gnew='git switch main && git pull && git switch -c'
+alias gsc='git switch -c'
+alias gdbl='git branch --delete'
 
 alias apec='yarn add @telia-company/payment-engine-common'
+alias apeac='yarn add @telia-company/payment-engine-adyen-common'
 
 alias ea='nano ~/.bash_aliases && . ~/.bash_aliases'
 alias ek='nano ~/.xbindkeysrc && xbindkeys'
